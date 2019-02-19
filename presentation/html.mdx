@@ -1,0 +1,445 @@
+export { dark as theme } from "mdx-deck/themes";
+import { Image } from "mdx-deck";
+import Layout from "./Layout";
+import Layout2 from "./Layout2";
+import Layout3 from "./Layout3";
+import { Head } from "mdx-deck";
+
+<Head>
+  <title>React js 0 -100</title>
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@jxnblk" />
+  <meta name="twitter:title" content="React js Zero to Hero" />
+  <meta name="twitter:description" content="A really great presentation" />
+  <meta name="twitter:image" content="https://example.com/card.png" />
+</Head>
+
+export default Layout;
+
+# Reactjs Zero to Hero
+
+---
+
+export default Layout;
+
+### Lesson 1
+
+#### Introduction
+
+---
+
+### 3 MAIN TECHNOLOGIES
+
+- HTML
+- CSS
+- Javascript
+
+---
+
+### What is React?
+
+#### \* Javascript library created by Facebook
+
+#### \* Very popular
+
+#### \* Compare and Like Angular js, Vue js
+
+---
+
+export default Layout2;
+
+### Lesson 2 - Part 1
+
+# Javascript Tips and Trick
+
+## For React Developer
+
+---
+
+### What is ECMAScript?
+
+#### A stabdard for scripting languages, like Javascript
+
+##### Current Version implemented into most browser is es5
+
+---
+
+## ECMAScript 6
+
+### Includes Many new Features
+
+### Not fully supported in browser yet
+
+---
+
+## Functional programming
+
+### Javascript is Functional Programming Language
+
+### Less Time
+
+### Less Bugs
+
+---
+
+## Function is Value
+
+```Javascript
+function myFunction(a, b) {
+  return a * b;
+}
+
+var x = myFunction(4, 3); //x =12
+
+var x = myFunction(4, 3) * 2; // x =24
+
+```
+
+---
+
+```Javascript
+var x= function (a, b) { //Functional Programming
+  return a * b;
+}
+
+var y = x
+
+y(4,3) //12
+
+
+```
+
+---
+
+### Arrow Functions
+
+##### Arrow functions allows a short syntax for writing function expressions.
+
+##### You don't need the function keyword, the return keyword, and the curly brackets.
+
+```Javascript
+// ES5
+var x = function(x, y) {
+  return x * y;
+}
+
+// ES6
+const x = (x, y) => x * y;
+```
+
+---
+
+## Higher Order Function
+
+### Pass function to other function
+
+---
+
+# Good for
+
+#### composition (Small function to Bigger Function)
+
+---
+
+#### Like Filter :
+
+```Javascript
+var animals = [
+  {name : 'a1', type :'dog'},
+  {name : 'a2', type :'dog'},
+  {name : 'a3', type :'cat'},
+  {name : 'a4', type :'fish'}
+]
+var dogs = []
+for (var i=0;i<animals.length;i++){
+  if (animals[i].type==='dog')
+   dogs.push(animals[i])
+}
+```
+
+---
+
+```Javascript
+var isDog = function(animal){
+  return animal.type=== 'dog'
+}
+
+var dogs = animals.filter(isDog)
+
+```
+
+---
+
+```Javascript
+var dogs = animals.filter(function(animal){
+  return animal.type=== 'dog'
+})
+```
+
+---
+
+### map is another Higher Order function
+
+```Javascript
+var animals = [
+  {name : 'a1', type :'dog'},
+  {name : 'a2', type :'dog'},
+  {name : 'a3', type :'cat'},
+  {name : 'a4', type :'fish'}
+]
+var names = []
+for (var i=0;i<animals.length;i++){
+   names.push(animals[i].name)
+}
+console.log(names);
+```
+
+---
+
+````Javascript
+var names = animals.map(function(animal){
+  return animal.name
+})
+// with arrow function 1
+var names = animals.map((animal)=>{return animal.name})
+
+console.log(names);
+
+// with arrow function 2
+var names = animals.map((animal)=>animal.name)
+
+console.log(names);
+
+---
+
+export default Layout2;
+
+### Lesson 2 - Part 2
+
+# Javascript Tips and Trick
+
+## For React Developer
+
+---
+### Spread Operator
+---
+```javascript
+var array = ["a1","a2","a3"]
+console.log(array) //["a1", "a2", "a3"]
+console.log(...array) //a1 a2 a3
+````
+
+---
+
+```javascript
+nums1 = [1, 2, 3]; // [1, 2, 3]
+nums2 = [4, 5, 6]; // [4, 5, 6]
+console.log(nums2); // [4, 5, 6]
+console.log(nums1, nums2); // [1, 2, 3] (3) [4, 5, 6]
+console.log(...nums1, ...nums2); //1 1 2 3 4 5 6
+```
+
+---
+
+```javascript
+var nums = [1, 2, 3];
+
+function addNums(a, b, c) {
+  return a + b + c;
+}
+
+addNums(...nums); //6
+```
+
+---
+
+### Template String
+
+---
+
+```javascript
+var temp = `Hello Reac Js`;
+console.log(temp); // Hello Reac Js
+
+var temp = `Hello 
+Reac Js`;
+console.log(temp); // Hello Reac Js
+```
+
+---
+
+```javascript
+function log(name, age) {
+  console.log("Name is:" + name + " age is" + age);
+}
+
+log("ali", "30"); //My Name is:ali my age is30
+```
+
+---
+
+```javascript
+function log(name, age) {
+  console.log(`Name is ${name} is ${age}`);
+}
+log("ali", "30"); // Name is ali Age is 30
+```
+
+---
+
+### Object Literal Enhancements
+
+---
+
+```javascript
+var name = "ali";
+var familyName = "alavi";
+var person = {
+  name: name,
+  familyName: familyName
+};
+
+console.log(person.name); // ali
+```
+
+---
+
+```javascript
+var name = "ali";
+var familyName = "alavi";
+var person = {
+  name,
+  familyName
+};
+
+console.log(person.name); //ali
+```
+
+---
+
+export default Layout2;
+
+### Lesson 2 - Part 3
+
+# Javascript Tips and Trick
+
+## For React Developer
+
+## Asynchronous JavaScript
+
+---
+
+### Asynchronous Code Can Start now finish later
+
+#### Like Fetch Data from Youtube, twitter,...Api's
+
+---
+
+#### synchronous code
+
+##### Javascript code runs on a single thread(cand do 1 thing at a time)
+
+```javascript
+var article = readSync(article);
+console.log(article);
+var auther = readSync(auther);
+console.log(auther);
+```
+
+---
+
+#### Asynchronous code
+
+##### runs code on a multiple thread(cand do 1 thing at a time)
+
+```javascript
+readAsync(article, function() {
+  console.log(article);
+});
+
+readAsync(autor, function() {
+  console.log(auther);
+});
+```
+
+---
+
+<Image src="./img/Asyn.PNG" size="auto" />
+
+---
+
+### Async Flow Control
+
+#### Callbacks
+
+#### Promises
+
+#### Generators
+
+---
+
+## Javascript Callbacks
+
+---
+
+## Javascript Promises
+
+---
+
+## Javascript Generators
+
+---
+
+export default Layout3;
+
+### Lesson 3
+
+# How React Works
+
+---
+
+# React
+
+### components , components , components
+
+#### Navbar
+
+#### Search Box
+
+#### Footer
+
+---
+
+### React job
+
+#### Inject component to dom
+
+#### By create virtual dom from components
+
+#### Render it to Browser (Actual Dom)
+
+#### If Component State chage Component re render
+
+---
+
+### Component
+
+#### Components look like HTML template (jsx)
+
+#### contain State
+
+### component sample
+
+---
+
+### React Setup with CDN
+
+---
+
+export default Layout3;
+
+### Lesson 4
+
+#### React Setup (With CDN)
+
+---

@@ -1,0 +1,16 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "mdx-deck html.mdx",
+    "build": "mdx-deck build html.mdx"
+  },
+  "keywords": [],
+  "author": "Hooman Amini <amini.hooman@gmail.com> (www.ractor.ir)",
+  "license": "ISC",
+  "devDependencies": {
+    "mdx-deck": "^1.8.2"
+  }
+}
