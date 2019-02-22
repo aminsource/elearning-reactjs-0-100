@@ -22,20 +22,22 @@
           name: "ali",
           age: 40
         };
-
-        handelClick = e => {
-          console.log(e.target);
-          console.log(this.state);
-          this.setState({ name: "hassan", age: "30" });
+        onChange = e => {
+          this.setState({ name: e.target.value });
         };
+        onSubmit = e => {
+          e.preventDefault();
+          console.log("Form Summited", this.state);
+        };
+
         render() {
           return (
             <div className="app-name">
-              <h1>Hello React Developer</h1>
-              <p>
-                Name is {this.state.name} Age : {this.state.age}
-              </p>
-              <button onClick={this.handelClick}>Click me</button>
+              <h1>Hello {this.state.name}</h1>
+              <form onSubmit={this.onSubmit}>
+                <input type="text" onChange={this.onChange} />
+                <button>submit</button>
+              </form>
             </div>
           );
         }
