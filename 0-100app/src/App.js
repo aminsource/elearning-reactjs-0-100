@@ -1,13 +1,11 @@
 import React, { Component } from "react";
-import "./App.css";
-
+import Ractor from "./Ractor";
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <p>۰-100 React App</p>
-        </header>
+        <h1>Ractor App</h1>
+        <Ractor />
       </div>
     );
   }
