@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Ractor from "./Ractor";
+import AddExpert from "./AddExpert";
 class App extends Component {
   state = {
     ractors: [
@@ -8,11 +9,17 @@ class App extends Component {
       { name: "sina", age: "25", id: "3" }
     ]
   };
+  addExpert = expert => {
+    expert.id = Math.random();
+    let ractors = [...this.state.ractors, expert];
+    this.setState({ ractors: ractors });
+  };
   render() {
     return (
       <div className="App">
         <h1>Ractor App</h1>
         <Ractor ractors={this.state.ractors} />
+        <AddExpert addExpert={this.addExpert} />
       </div>
     );
   }
