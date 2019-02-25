@@ -1,6 +1,6 @@
 import React from "react";
 
-const Ractor = ({ ractors }) => {
+const Ractor = ({ ractors, deleteExpert }) => {
   // const ractorsList = ractors.map(ractor => {
   //   if (ractor.age > 30) {
   //     return (
@@ -14,10 +14,17 @@ const Ractor = ({ ractors }) => {
   //   }
   // });
   const ractorsList = ractors.map(ractor => {
-    return ractor.age > 25 ? (
+    return ractor.age > 10 ? (
       <div className="ractor" key={ractor.id}>
         <div>Name: {ractor.name}</div>
         <div>Age:{ractor.age}</div>
+        <button
+          onClick={() => {
+            deleteExpert(ractor.id);
+          }}
+        >
+          Delete Expert
+        </button>
       </div>
     ) : null;
   });

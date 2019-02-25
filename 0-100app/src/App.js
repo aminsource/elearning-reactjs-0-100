@@ -14,11 +14,18 @@ class App extends Component {
     let ractors = [...this.state.ractors, expert];
     this.setState({ ractors: ractors });
   };
+  deleteExpert = id => {
+    // console.log(id);
+    let ractors = this.state.ractors.filter(expert => {
+      return expert.id !== id;
+    });
+    this.setState({ ractors: ractors });
+  };
   render() {
     return (
       <div className="App">
         <h1>Ractor App</h1>
-        <Ractor ractors={this.state.ractors} />
+        <Ractor ractors={this.state.ractors} deleteExpert={this.deleteExpert} />
         <AddExpert addExpert={this.addExpert} />
       </div>
     );
