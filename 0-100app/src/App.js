@@ -21,6 +21,13 @@ class App extends Component {
     });
     this.setState({ ractors: ractors });
   };
+  componentDidMount() {
+    console.log("Component Mounted");
+  }
+  componentDidUpdate(prevProps, prevState) {
+    console.log("Component Updated");
+    console.log(prevProps, prevState);
+  }
   render() {
     return (
       <div className="App">
